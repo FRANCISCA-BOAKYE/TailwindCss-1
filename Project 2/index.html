@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Project 2 -Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" p-10 bg-gray-50">
+  <!--Work area-->
+ <div class="flex gap-2">
+  <!--Screen left div-->
+   <div class="flex  bg-white w-[9cm] h-[26cm] shadow-xl flex flex-col">
+    <!--Top-->
+     <div>
+     <h1 class="text-3xl font-bold mt-8 ml-10 times-new-roman">
+      Mondays
+     </h1>
+     
+     <ul class="ml-8 mt-4 flex flex-col gap-2 ">
+      <li>
+        <a href="#" class="text-lg font-semibold  times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zM13 3v6h8V3h-8z"/>
+          </svg>
+          Dashboard</a>
+      </li>
+
+      <li>
+        <a href="#" class="text-lg font-semibold times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.11 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm0 16H5V9h14v11z"/>
+          </svg>
+          Projects</a>
+      </li>
+
+      <li>
+        <a href="#" class="text-lg font-semibold times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3 6h2v2H3V6zm4 0h14v2H7V6zm-4 5h2v2H3v-2zm4 0h14v2H7v-2zm-4 5h2v2H3v-2zm4 0h14v2H7v-2z"/>
+          </svg>
+          My Tasks </a>
+
+      </li>
+
+      <li>
+        <a href="#" class="text-lg font-semibold  times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+         <path d="M21 6c0-1.1-.9-2-2-2H5C3.9 4 3 4.9 3 6v12c0 1.1.9 2 2 2h12l4 4V6zm-4 6H7v-2h10v2zm0-3H7V7h10v2z"/>
+         <path d="M17 2H5C3.9 2 3 2.9 3 4v12c0 1.1.9 2 2 2h12l4 4V8c0-1.1-.9-2-2-2z" opacity="0.3"/>
+         </svg>
+         Chats</a>
+      </li>
+
+      <li>
+        <a href="#" class="text-lg font-semibold  times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+         <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm1 15H7v-2h8v2zm0-4H7v-2h8v2zm-3-5V3.5L18.5 9H12z"/>
+         </svg>
+         Documents</a>
+      </li>  
+
+      <li>
+        <a href="#" class="text-lg font-semibold  times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M21 2H3v20l2-2 2 2 2-2 2 2 2-2 2 2 2-2V2zM5 6h14v2H5V6zm0 4h14v2H5v-2zm0 4h14v2H5v-2z"/>
+        </svg>
+        Receipts</a>
+      </li>
+      
+     </ul>
+     <hr class="border-t border-gray-400 w-[9cm] mt-2">
+     </div>
+
+    <!--Down--> 
+    <div class=" ml-10 mt-1 flex flex-col">
+    <p  class="text-gray-600 font-bold times-new-roman text-xl mt-10 ">
+      Projects <span class="ml-16"></span><button class="text-gray-600 hover:bg-blue-700 hover:text-white rounded-full text-3xl">+</button>
+    </p>
+    <ul>
+      <li class="mt-4">
+        <a href="#" class="text-lg font-semibold times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+          <span class="w-3 h-3 bg-purple-300 rounded-4xl inline-block"></span>
+         Event Planning</a>
+      </li>
+
+      <li class="mt-4">
+        <a href="#" class="text-lg font-semibold times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+          <span class="w-3 h-3 bg-green-300 rounded-4xl inline-block"></span>
+          Breakfast Plan</a>
+      </li>
+
+    </ul>
+    <ul class="mt-[12rem]">
+      <li class="mt-4">
+        <a href="#" class="text-lg font-semibold times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.14 12.936c.036-.3.056-.603.056-.936s-.02-.636-.056-.936l2.03-1.582a.5.5 0 0 0 .121-.638l-1.922-3.32a.5.5 0 0 0-.607-.21l-2.39.96a6.986 6.986 0 0 0-1.62-.936l-.36-2.54A.5.5 0 0 0 14.66 2h-3.32a.5.5 0 0 0-.496.43l-.36 2.54a6.986 6.986 0 0 0-1.62.936l-2.39-.96a.5.5 0 0 0-.607.21l-1.922 3.32a.5.5 0 0 0 .121.638l2.03 1.582c-.036.3-.056.603-.056.936s.02.636.056.936l-2.03 1.582a.5.5 0 0 0-.121.638l1.922 3.32c.14.242.446.332.687.21l2.39-.96c.498.384 1.048.696 1.62.936l.36 2.54c.048.306.3.43.496.43h3.32c.196 0 .448-.124.496-.43l.36-2.54a6.986 6.986 0 0 0 1.62-.936l2.39.96c.241.122.547.032.687-.21l1.922-3.32a.5.5 0 0 0-.121-.638l-2.03-1.582zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/>
+         </svg>
+          Settings</a>
+      </li>
+
+      <li class="mt-4 mb-10">
+        <a href="#" class="text-lg font-semibold times-new-roman text-gray-600 flex items-center gap-2 hover:bg-blue-700 p-2 rounded-md hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-3h2v2h-2v-2zm2.07-7.75c-.9.92-1.07 1.25-1.07 2.25h-2v-.5c0-1.1.45-2.1 1.17-2.83.73-.73 1.71-1.17 2.83-1.17 2.21 0 4 1.79 4 4h-2c0-1.1-.9-2-2-2-.55 0-1.05.22-1.41.59z"/>
+          </svg>
+          Help & Support<span class="w-8 h-8 bg-green-300 rounded-3xl inline-block text-black ml-10 text-center">8</span></a>
+      </li>
+    </ul>
+    </div>
+   </div>
+  
+  <!--Screen right div-->
+ <div class="bg-white w-[26cm] h-[26cm] shadow-xl p-5 flex-1 flex-col gap-6">
+  <!--Header div-->
+  <div class=" flex flex-row " >
+    <div class="flex w-[10cm] border border-gray-300 rounded-2xl overflow-hidden">
+    <!-- Search Input -->
+    <input 
+    type="text" 
+    placeholder="Search..." 
+    class="flex-1 px-4 py-2 outline-none text-black placeholder-black bg-gray-100"
+    />
+    <button class="px-4 bg-white text-blacj flex items-center justify-center hover:bg-blue-600 hover:text-white rounded-50">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24" height="24" fill="currentColor">
+     <path d="M16 8 H40 C42.2091 8 44 9.79086 44 12 V20 H28 V28 H44 V36 H28 V56 H16 V8 Z"/>
+     </svg>
+
+    </button>
+
+  </div>
+
+  <div class="mt-2 ml-[9cm] flex flex-row gap-1">
+  <button class="bg-blue-700 text-white hover:bg-white hover:text-blue-700 w-[3cm] h-8 hover:border-2 hover:border-blue-700 rounded-xl">
+    <span>+</span> New Project 
+  </button>
+  <button class="bg-blue-700 text-white hover:bg-white hover:text-blue-700 w-[1cm] h-8 hover:border-2 hover:border-blue-700 rounded-xl ">
+   +
+  </button>
+  <button class="bg-white text-gray-600 hover:bg-gray-600 hover:text-white w-[1cm] h-8 hover:border-2  rounded-xl "></buttonclass>
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="24" fill="currentColor">
+     <path d="M12 2C10.343 2 9 3.343 9 5V6.268C6.165 7.136 4 9.798 4 13V17L2 19V20H22V19L20 17V13C20 9.798 17.835 7.136 15 6.268V5C15 3.343 13.657 2 12 2ZM12 22C13.105 22 14 21.105 14 20H10C10 21.105 10.895 22 12 22Z"/>
+     </svg>
+
+  </button>
+  <img 
+    src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&h=100" 
+    alt="Random man portrait" 
+    class="w-[1cm] h-[1cm] rounded-full object-cover"/>
+
+  </div>
+
+
+  </div>
+  <hr class="border-t border-gray-400 w-[25cm] mt-2">
+
+  <!--Good evening div--> 
+  <div class="mt-5">
+    <div class="text-left" >
+    <p class="text-gray-600">Thursday,20th September</p>
+    </div>
+    <div class="text-right  flex flex-row justify-end gap-3">
+      <button class="bg-white text-black border border-black hover:bg-gray-200 rounded-md w-[2cm] flex items-center justify-center h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="18" cy="5" r="3"/>
+        <circle cx="6" cy="12" r="3"/>
+        <circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+        Share</button>
+      <span class="ml-3"></span>
+      <button class="bg-white text-black border border-black hover:bg-gray-200 rounded-md w-[6rem] flex items-center justify-center  h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="5" x2="12" y2="19"/>
+      <line x1="5" y1="12" x2="19" y2="12"/>
+       </svg>
+
+  <span>Add Task</span>
+</button>
+
+  </div>  
+  <div class="mt-5">
+    <h1 class="text-3xl font-bold times-new-roman">
+      Good Evening! Francisca,
+    </h1>
+      <div class="flex justify-between items-center bg-gray-100 rounded-full px-6 py-3 shadow-md w-[15cm]">
+    <!-- Time Saved -->
+    <div class="flex items-center gap-2 text-gray-700 text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <span><strong>12hrs</strong> Time Saved</span>
+    </div>
+
+    <!-- Projects Completed -->
+    <div class="flex items-center gap-2 text-gray-700 text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+      <span><strong>24</strong> Projects Completed</span>
+    </div>
+
+    <!-- Projects In-progress -->
+    <div class="flex items-center gap-2 text-gray-700 text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M17.95 17.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M17.95 6.05l2.83-2.83"/>
+      </svg>
+      <span><strong>7</strong> Projects In-progress</span>
+    </div>
+  </div>
+
+  </div>
+
+<div class="w-[23cm] space-y-8">
+
+    <!-- ===================================================== -->
+    <!--                     MY PROJECTS                       -->
+    <!-- ===================================================== -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 mt-8">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-semibold text-xl text-gray-900">My Projects</h2>
+        <button class="text-gray-500 hover:underline text-sm">See All</button>
+      </div>
+
+      <!-- TABLE -->
+      <table class="w-full text-sm">
+        <thead class="text-gray-500 border-b">
+          <tr>
+            <th class="py-2 text-left">Task Name</th>
+            <th class="py-2 text-left">Assign</th>
+            <th class="py-2 text-left">Status</th>
+          </tr>
+        </thead>
+
+        <tbody class="text-gray-700">
+
+          <!-- 1 -->
+          <tr class="border-b">
+            <td class="py-3">Create a blog for platform</td>
+            <td class="py-3">
+              <div class="flex items-center gap-2">
+                <img src="https://i.pravatar.cc/30?img=12" class="w-6 h-6 rounded-full">
+                <span>Sarah Wilson</span>
+              </div>
+            </td>
+            <td class="py-3">
+              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs">In Progress</span>
+            </td>
+          </tr>
+
+          <!-- 2 -->
+          <tr class="border-b">
+            <td class="py-3">UI/UX Design for new dashboard</td>
+            <td class="py-3">
+              <div class="flex items-center gap-2">
+                <img src="https://i.pravatar.cc/30?img=11" class="w-6 h-6 rounded-full">
+                <span>Madison James</span>
+              </div>
+            </td>
+            <td class="py-3">
+              <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs">Pending</span>
+            </td>
+          </tr>
+
+          <!-- 3 -->
+          <tr>
+            <td class="py-3">Wireframe for dashboard</td>
+            <td class="py-3">
+              <div class="flex items-center gap-2">
+                <img src="https://i.pravatar.cc/30?img=22" class="w-6 h-6 rounded-full">
+                <span>William Dwyane</span>
+              </div>
+            </td>
+            <td class="py-3">
+              <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Completed</span>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!--                 SCHEDULE + NOTES ROW                  -->
+    <!-- ===================================================== -->
+    <div class="grid grid-cols-2 gap-6 border border-gray-200  rounded-2xl shadow-sm">
+
+      <!-- ================= SCHEDULE (LEFT) ================= -->
+      <div class="bg-white p-6 rounded-xl shadow-sm">
+        <h2 class="font-semibold text-xl text-gray-900 mb-4">Schedule</h2>
+
+        <!-- Calendar Dates Row -->
+<div class="flex items-center gap-6 text-gray-500 mt-1 text-xs font-medium">
+  <div class="flex flex-col items-center">
+    <span class="">Su</span>
+    <span class="text-gray-400">14</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span>Mo</span>
+    <span class="text-gray-400">15</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span>Tu</span>
+    <span class="text-gray-400">16</span>
+  </div>
+  <div class="flex flex-col items-center bg-purple-500 text-white rounded-3xl w-5 ">
+    <span>We</span>
+    <span class="text-gray-400">17</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span>Th</span>
+    <span class="text-gray-400">18</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span>Fr</span>
+    <span class="text-gray-400">19</span>
+  </div>
+  <div class="flex flex-col items-center">
+    <span>Sa</span>
+    <span class="text-gray-400">20</span>
+  </div>
+</div>
+
+
+        <div class="space-y-4">
+
+          <!-- 1 -->
+          <div class="flex justify-between items-center py-2 border-b">
+            <div>
+              <p class="font-medium text-gray-800">Kickoff Meeting</p>
+              <p class="text-gray-500 text-sm">Tomorrow – 10 AM</p>
+            </div>
+            <img src="https://i.pravatar.cc/32?img=15" class="w-8 h-8 rounded-full">
+          </div>
+
+          <!-- 2 -->
+          <div class="flex justify-between items-center py-2 border-b">
+            <div>
+              <p class="font-medium text-gray-800">Create WordPress Website</p>
+              <p class="text-gray-500 text-sm">Friday – 2 PM</p>
+            </div>
+            <img src="https://i.pravatar.cc/32?img=20" class="w-8 h-8 rounded-full">
+          </div>
+
+          <!-- 3 -->
+          <div class="flex justify-between items-center py-2">
+            <div>
+              <p class="font-medium text-gray-800">Create User Flow</p>
+              <p class="text-gray-500 text-sm">Monday – 1 PM</p>
+            </div>
+            <img src="https://i.pravatar.cc/32?img=3" class="w-8 h-8 rounded-full">
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <!-- ================= NOTES (RIGHT) ================= -->
+      <div class="bg-white p-6 rounded-xl shadow-sm">
+        <h2 class="font-semibold text-xl text-gray-900 mb-4 flex">
+          <!-- Outline Note -->
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" role="img">
+      <title>Note</title>
+      <path d="M21 15V6a2 2 0 0 0-2-2H7L3 7v10a2 2 0 0 0 2 2h10" />
+      <path d="M16 2v6h6" />
+     <line x1="8" y1="10" x2="16" y2="10" />
+      <line x1="8" y1="14" x2="14" y2="14" />
+     </svg>
+
+          Notes</h2>
+
+        <ul class="space-y-2 text-gray-800 text-sm">
+
+          <li class="flex items-start gap-3">
+            <span class="w-3 h-3 rounded-full bg-white mt-1 border border-black"></span>
+            Landing Page For Website 
+          </li>
+          <p class="text-sm">  To get started on landing page,could you provide a bit more detail about its purpose?</p>
+          <hr class="border-t border-gray-300">
+
+          <li class="flex items-start gap-3">
+            <span class="w-4 h-4 rounded-full bg-purple-400 mt-1 border border-black">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+             <path d="M20 6L9 17l-5-5" />
+             </svg>
+
+            </span>
+            Fixing icons with dark backgrounds
+          </li>
+           <p class="text-sm">  Use icons that are easily recognizable and straightforward.Avoid overly complex designs that might confuse users</p>
+          <hr class="border-t border-gray-300">
+
+          <li class="flex items-start gap-3">
+            <span class="w-3 h-3 rounded-full bg-white border border-black mt-1"></span>
+            Discussion regarding userflow improvement
+          </li>
+          <p class="text-sm"> What's the main goal of the landing page?(eg.lead generation, product)</p>
+          <hr class="border-t border-gray-300">
+
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+  
+
+  </div>
+  
+
+
+
+
+ </div>
+</body>
+</html>
