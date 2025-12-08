@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Project 3 -Splitter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+   <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body class="bg-cyan-100">
+    <h1
+      class="flex justify-center mt-20 tracking-[0.4em] font-bold text-3xl text-cyan-800"
+    >
+      SPLI<br />TTER
+    </h1>
+
+    <!-- OUTER CARD -->
+    <div
+      class="flex flex-col md:flex-row justify-center gap-10 mt-10 bg-white p-6 w-full max-w-4xl mx-auto min-h-[350px] shadow-lg border border-cyan-200 rounded-3xl"
+    >
+      <!-- LEFT SIDE (inputs) -->
+      <div class="flex flex-col w-full md:w-1/2 space-y-4">
+        <!-- BILL -->
+        <div>
+          <label class="block mb-1 text-cyan-800 font-medium">Bill</label>
+          <input
+            class="w-full p-3 bg-cyan-50 rounded-lg no-spin"
+            type="text"
+            id="bill-amount"
+            placeholder="$0.00"
+          />
+        </div>
+
+        <!-- TIP SELECTION -->
+        <div>
+          <label class="block mb-1 text-cyan-800 font-medium">Select Tip %</label>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <button
+              class="tip-btn bg-cyan-900 text-white font-bold py-3 rounded-lg"
+              data-value="5"
+            >
+              5%
+            </button>
+            <button
+              class="tip-btn bg-cyan-900 text-white font-bold py-3 rounded-lg"
+              data-value="10"
+            >
+              10%
+            </button>
+            <button
+              class="tip-btn bg-cyan-900 text-white font-bold py-3 rounded-lg"
+              data-value="15"
+            >
+              15%
+            </button>
+            <button
+              class="tip-btn bg-cyan-900 text-white font-bold py-3 rounded-lg"
+              data-value="25"
+            >
+              25%
+            </button>
+            <button
+              class="tip-btn bg-cyan-900 text-white font-bold py-3 rounded-lg"
+              data-value="50"
+            >
+              50%
+            </button>
+
+            <!-- Custom Tip -->
+            <input
+              id="custom-tip"
+              class="bg-cyan-50 text-cyan-800 font-medium py-3 px-4 rounded-lg w-full"
+              placeholder="Custom"
+              type="text"
+            />
+          </div>
+        </div>
+
+        <!-- NUMBER OF PEOPLE -->
+        <div>
+          <label class="block mb-1 text-cyan-800 font-medium"
+            >Number of People</label
+          >
+          <input
+            class="w-full p-3 bg-cyan-50 rounded-lg no-spin"
+            type="number"
+            id="number-of-people"
+            placeholder="0"
+          />
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE (output) -->
+      <div
+        class="flex flex-col justify-between w-full md:w-1/2 bg-cyan-900 p-6 rounded-3xl"
+      >
+        <!-- Tip Per Person -->
+        <div class="flex justify-between items-center">
+          <div class="text-white font-medium">
+            Tip Amount<br /><span class="text-cyan-400">/ person</span>
+          </div>
+          <output
+            id="tip-amount"
+            class="text-cyan-300 text-right text-4xl font-bold tracking-[0.1em]"
+            >$0.00</output
+          >
+        </div>
+
+        <!-- Total Per Person -->
+        <div class="flex justify-between items-center mt-8">
+          <div class="text-white font-medium">
+            Total<br /><span class="text-cyan-400">/ person</span>
+          </div>
+          <output
+            id="total-amount"
+            class="text-cyan-300 text-right text-4xl font-bold tracking-[0.1em]"
+            >$0.00</output
+          >
+        </div>
+
+        <button
+          id="reset-btn"
+          class="bg-cyan-300 text-cyan-900 font-bold py-3 px-4 rounded-lg mt-10 hover:bg-cyan-400"
+        >
+          RESET
+        </button>
+      </div>
+    </div>
+    <script>
+// INPUTS
+const billInput = document.getElementById("bill-amount");
+const peopleInput = document.getElementById("number-of-people");
+const customTipInput = document.getElementById("custom-tip");
+const tipButtons = document.querySelectorAll(".tip-btn");
+
+// OUTPUTS
+const tipAmountOutput = document.getElementById("tip-amount");
+const totalAmountOutput = document.getElementById("total-amount");
+
+// RESET BUTTON
+const resetBtn = document.getElementById("reset-btn");
+
+let tipPercent = 0;
+
+// --------------------------------------
+// CALCULATE TOTALS
+// --------------------------------------
+function calculate() {
+  const bill = parseFloat(billInput.value) || 0;
+  const people = parseInt(peopleInput.value) || 1;
+
+  if (people <= 0) return;
+
+  const tipAmount = (bill * tipPercent) / people;
+  const totalAmount = (bill + bill * tipPercent) / people;
+
+  tipAmountOutput.textContent = "$" + tipAmount.toFixed(2);
+  totalAmountOutput.textContent = "$" + totalAmount.toFixed(2);
+}
+
+// --------------------------------------
+// TIP BUTTONS (5%, 10%, 15%, etc)
+// --------------------------------------
+tipButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Remove active state
+    tipButtons.forEach((b) => {
+      b.classList.remove("bg-cyan-700");
+      b.classList.add("bg-cyan-900");
+    });
+
+    // Highlight selected button
+    btn.classList.remove("bg-cyan-900");
+    btn.classList.add("bg-cyan-700");
+
+    // Clear custom tip
+    customTipInput.value = "";
+
+    tipPercent = parseFloat(btn.getAttribute("data-value")) / 100;
+
+    calculate();
+  });
+});
+
+// --------------------------------------
+// CUSTOM TIP
+// --------------------------------------
+customTipInput.addEventListener("input", () => {
+  // Remove highlight from preset buttons
+  tipButtons.forEach((b) => {
+    b.classList.remove("bg-cyan-700");
+    b.classList.add("bg-cyan-900");
+  });
+
+  tipPercent = parseFloat(customTipInput.value) / 100 || 0;
+
+  calculate();
+});
+
+// --------------------------------------
+// BILL & PEOPLE INPUT
+// --------------------------------------
+billInput.addEventListener("input", calculate);
+peopleInput.addEventListener("input", calculate);
+
+// --------------------------------------
+// RESET BUTTON
+// --------------------------------------
+resetBtn.addEventListener("click", () => {
+  billInput.value = "";
+  peopleInput.value = "";
+  customTipInput.value = "";
+  tipPercent = 0;
+
+  tipAmountOutput.textContent = "$0.00";
+  totalAmountOutput.textContent = "$0.00";
+
+  // Reset button highlights
+  tipButtons.forEach((b) => {
+    b.classList.remove("bg-cyan-700");
+    b.classList.add("bg-cyan-900");
+  });
+});
+</script>
+
+  </body>
+</html>

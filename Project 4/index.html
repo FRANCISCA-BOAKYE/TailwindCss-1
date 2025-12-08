@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project 3 -</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="index.css" />
+   <script src="index.js"></script>
+
+</head>
+
+<body class="bg-[#0f1424] min-h-screen flex justify-center items-center p-6">
+  <div class="grid md:grid-cols-4 gap-6 max-w-6xl w-full">
+    
+    <!--PROFILE CARD -->
+    <div class="md:row-span-2 bg-[#1c1f4a] rounded-xl">
+      <div class="bg-[#5847eb] p-6 rounded-xl">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/053/630/777/small/a-man-with-a-white-shirt-and-gray-hair-photo.jpeg" 
+        class="w-16 h-16 rounded-full border-2 border-white mb-4">
+        <p class="text-sm text-[#bdc1ff]">Report for</p>
+        <h1 class="text-3xl font-light text-white leading-tight">Jeremy<br>Robson</h1>
+      </div>
+      <div class="p-6 space-y-4 text-[#6f76c8] flex flex-col mt-8">
+        <button class="time-btn text-left hover:text-white" data-type="daily">Daily</button>
+        <button class="time-btn text-left text-white" data-type="weekly">Weekly</button>
+        <button class="time-btn text-left hover:text-white" data-type="monthly">Monthly</button>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div data-name="Work" class="card bg-orange-500">
+      <div class="inner-card">
+        <p>Work</p>
+        <h2 class="hours">32hrs</h2>
+        <p class="prev text-sm text-[#bdc1ff]">Last Week - 36hrs</p>
+      </div>
+    </div>
+
+    <div data-name="Play" class="card bg-sky-400">
+      <div class="inner-card">
+        <p>Play</p>
+        <h2 class="hours">10hrs</h2>
+        <p class="prev text-sm text-[#bdc1ff]">Last Week - 8hrs</p>
+      </div>
+    </div>
+
+    <div data-name="Study" class="card bg-pink-400">
+      <div class="inner-card">
+        <p>Study</p>
+        <h2 class="hours">4hrs</h2>
+        <p class="prev text-sm text-[#bdc1ff]">Last Week - 7hrs</p>
+      </div>
+    </div>
+
+    <div data-name="Exercise" class="card bg-green-400 mt-3">
+      <div class="inner-card">
+        <p>Exercise</p>
+        <h2 class="hours">4hrs</h2>
+        <p class="prev text-sm text-[#bdc1ff]">Last Week - 5hrs</p>
+      </div>
+    </div>
+
+    <div data-name="Social" class="card bg-purple-500 mt-3">
+      <div class="inner-card">
+        <p>Social</p>
+        <h2 class="hours">5hrs</h2>
+        <p class="prev text-sm text-[#bdc1ff]">Last Week - 10hrs</p>
+      </div>
+    </div>
+
+    <div data-name="Self Care" class="card bg-yellow-400 mt-3">
+      <div class="inner-card">
+        <p>Self Care</p>
+        <h2 class="hours">2hrs</h2>
+        <p class="prev text-sm text-[#bdc1ff]">Last Week - 2hrs</p>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+  <script>
+const data = {
+  daily: [
+    { name: "Work", current: 5, previous: 7 },
+    { name: "Play", current: 1, previous: 2 },
+    { name: "Study", current: 0, previous: 1 },
+    { name: "Exercise", current: 1, previous: 1 },
+    { name: "Social", current: 1, previous: 3 },
+    { name: "Self Care", current: 0, previous: 1 },
+  ],
+  weekly: [
+    { name: "Work", current: 32, previous: 36 },
+    { name: "Play", current: 10, previous: 8 },
+    { name: "Study", current: 4, previous: 7 },
+    { name: "Exercise", current: 4, previous: 5 },
+    { name: "Social", current: 5, previous: 10 },
+    { name: "Self Care", current: 2, previous: 2 },
+  ],
+  monthly: [
+    { name: "Work", current: 103, previous: 128 },
+    { name: "Play", current: 23, previous: 29 },
+    { name: "Study", current: 13, previous: 19 },
+    { name: "Exercise", current: 11, previous: 18 },
+    { name: "Social", current: 21, previous: 23 },
+    { name: "Self Care", current: 7, previous: 11 },
+  ],
+};
+
+// Update cards based on selected timeframe
+function updateCards(mode) {
+  const items = data[mode];
+  items.forEach((item) => {
+    const card = document.querySelector(`.card[data-name="${item.name}"]`);
+    if (!card) return;
+
+    card.querySelector(".hours").textContent = `${item.current}hrs`;
+    card.querySelector(".prev").textContent = `Last Week - ${item.previous}hrs`;
+  });
+}
+
+// Buttons
+const btns = document.querySelectorAll(".time-btn");
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btns.forEach((b) => b.classList.remove("text-white"));
+    btn.classList.add("text-white");
+    updateCards(btn.dataset.type);
+  });
+});
+
+// Default view
+updateCards("weekly");
+</script>
+
+
+</body>
+
+
+
+
+
+</html>
